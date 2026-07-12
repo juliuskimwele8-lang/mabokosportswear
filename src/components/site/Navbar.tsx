@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Menu, X, Dumbbell } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import logoAsset from "@/assets/uploads/IMG-20260708-WA0087.jpg.asset.json";
 
-// TODO: Replace with real business name
-const BUSINESS_NAME = "Apex Sports";
+const BUSINESS_NAME = "Maboko Sports Wear";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -30,21 +30,17 @@ export function Navbar() {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-background/85 backdrop-blur-md border-b border-border shadow-[var(--shadow-soft)]"
+          ? "bg-background/90 backdrop-blur-md border-b border-border shadow-[var(--shadow-soft)]"
           : "bg-transparent"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <a href="#home" className="flex items-center gap-2">
-          <span
-            className={`grid h-9 w-9 place-items-center rounded-xl ${
-              scrolled ? "bg-primary text-primary-foreground" : "bg-white/10 text-white backdrop-blur"
-            }`}
-          >
-            <Dumbbell className="h-5 w-5" strokeWidth={2.5} />
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        <a href="#home" className="flex items-center gap-2.5">
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-border">
+            <img src={logoAsset.url} alt="Maboko Sports Wear logo" className="h-full w-full object-contain p-1" />
           </span>
           <span
-            className={`font-display text-lg font-bold tracking-tight ${
+            className={`font-display text-base font-bold tracking-tight sm:text-lg ${
               scrolled ? "text-foreground" : "text-white"
             }`}
           >
