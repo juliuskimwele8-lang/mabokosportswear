@@ -46,6 +46,8 @@ export function Contact() {
           <Reveal className="lg:col-span-2">
             <div className="flex h-full flex-col gap-4">
               <ContactRow icon={Phone} label="Call us" value={CONTACT.phone} href={`tel:${CONTACT.phone.replace(/\s/g, "")}`} />
+              <ContactRow icon={Phone} label="Alt. line" value={CONTACT.phoneAlt} href={`tel:${CONTACT.phoneAlt.replace(/\s/g, "")}`} />
+
               <ContactRow
                 icon={MessageCircle}
                 label="WhatsApp"
