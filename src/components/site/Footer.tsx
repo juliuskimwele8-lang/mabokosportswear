@@ -1,28 +1,33 @@
-import { Dumbbell, Facebook, Instagram, Twitter, Youtube, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, MessageCircle, Mail, Phone, MapPin } from "lucide-react";
+import logoAsset from "@/assets/uploads/IMG-20260708-WA0087.jpg.asset.json";
 
-const BUSINESS_NAME = "Apex Sports";
+const BUSINESS_NAME = "Maboko Sports Wear";
 
 export function Footer() {
   return (
-    <footer className="bg-[var(--gradient-ink)] bg-secondary text-secondary-foreground">
+    <footer className="bg-secondary text-secondary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2">
-              <span className="grid h-10 w-10 place-items-center rounded-xl bg-primary">
-                <Dumbbell className="h-5 w-5 text-primary-foreground" strokeWidth={2.5} />
+            <div className="flex items-center gap-2.5">
+              <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-white">
+                <img src={logoAsset.url} alt="Maboko Sports Wear logo" className="h-full w-full object-contain p-1" />
               </span>
               <span className="font-display text-xl font-bold">{BUSINESS_NAME}</span>
             </div>
             <p className="mt-4 text-sm text-white/70">
-              Genuine sports equipment for athletes, teams, schools and clubs.
-              Trusted for over a decade.
+              Genuine sportswear, footwear and team kits — proudly serving
+              Mariakani and the wider Coast region.
             </p>
             <div className="mt-6 flex gap-2">
-              {[Facebook, Instagram, Twitter, Youtube].map((Icon, i) => (
+              {[
+                { Icon: Facebook, href: "#" },
+                { Icon: Instagram, href: "#" },
+                { Icon: MessageCircle, href: "https://wa.me/254793249128" },
+              ].map(({ Icon, href }, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href={href}
                   aria-label="Social link"
                   className="grid h-10 w-10 place-items-center rounded-xl bg-white/5 text-white/70 transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
@@ -38,7 +43,7 @@ export function Footer() {
               {["about", "products", "why", "gallery", "testimonials", "contact"].map((s) => (
                 <li key={s}>
                   <a href={`#${s}`} className="capitalize transition-colors hover:text-primary">
-                    {s.replace("why", "Why Choose Us")}
+                    {s === "why" ? "Why Choose Us" : s}
                   </a>
                 </li>
               ))}
@@ -48,7 +53,7 @@ export function Footer() {
           <div>
             <h4 className="text-sm font-semibold uppercase tracking-wider text-white">Categories</h4>
             <ul className="mt-4 space-y-2 text-sm text-white/70">
-              {["Football", "Basketball", "Gym Equipment", "Jerseys", "Training"].map((s) => (
+              {["Jerseys", "Football Boots", "Footballs", "Basketballs", "Volleyballs", "Rugby", "Track Pants", "Custom Printing"].map((s) => (
                 <li key={s}>
                   <a href="#products" className="transition-colors hover:text-primary">{s}</a>
                 </li>
@@ -61,18 +66,15 @@ export function Footer() {
             <ul className="mt-4 space-y-3 text-sm text-white/70">
               <li className="flex items-start gap-2">
                 <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {/* TODO: phone */}
-                <span>+1 (555) 123-4567</span>
+                <span>0793 249 128 / 0762 032 044</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {/* TODO: email */}
-                <span>hello@apexsports.example</span>
+                <span>info@mabokosportswear.co.ke</span>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                {/* TODO: address */}
-                <span>123 Athletic Ave, Your City</span>
+                <span>Mariakani, Kaloleni Road, Kilifi County</span>
               </li>
             </ul>
           </div>
