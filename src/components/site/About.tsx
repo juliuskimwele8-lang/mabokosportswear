@@ -9,19 +9,19 @@ export function About() {
         <Reveal>
           <div className="relative">
             <img
-              src={aboutImg}
-              alt="Our sports equipment showroom"
+              src={aboutAsset.url}
+              alt="Basketballs in stock at Maboko Sports Wear"
               width={1200}
               height={900}
               loading="lazy"
-              className="rounded-3xl object-cover shadow-[var(--shadow-elevated)]"
+              className="rounded-3xl object-cover shadow-[var(--shadow-elevated)] aspect-[4/3]"
             />
             <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-primary p-6 text-primary-foreground shadow-[var(--shadow-glow)] sm:block">
-              {/* TODO: Replace years of experience */}
-              <div className="text-4xl font-bold">10+</div>
-              <div className="text-sm font-medium opacity-90">Years of experience</div>
+              <div className="text-4xl font-bold">100%</div>
+              <div className="text-sm font-medium opacity-90">Authentic gear</div>
             </div>
           </div>
+
         </Reveal>
 
         <Reveal delay={0.1}>
