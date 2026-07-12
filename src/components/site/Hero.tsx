@@ -1,16 +1,13 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PhoneCall } from "lucide-react";
-import heroImg from "@/assets/hero.jpg";
+import heroAsset from "@/assets/uploads/IMG-20260708-WA0050.jpg.asset.json";
 
 export function Hero() {
   return (
     <section id="home" className="relative isolate min-h-screen overflow-hidden">
-      {/* Hero background image — replace src/assets/hero.jpg for a different look */}
       <img
-        src={heroImg}
-        alt="Premium sports equipment collection"
-        width={1920}
-        height={1280}
+        src={heroAsset.url}
+        alt="Adidas Predator football boots at Maboko Sports Wear"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/85 via-black/70 to-black/50" />
@@ -24,7 +21,7 @@ export function Hero() {
           className="inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-medium text-white backdrop-blur"
         >
           <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse" />
-          Trusted by athletes, clubs & schools
+          Mariakani's home of authentic sportswear
         </motion.div>
 
         <motion.h1
@@ -43,9 +40,8 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.2 }}
           className="mt-6 max-w-2xl text-lg text-white/80 sm:text-xl"
         >
-          {/* TODO: Replace with real business description */}
-          From weekend warriors to championship teams — we stock the equipment
-          that keeps you in the game. Genuine brands. Fair pricing. Real service.
+          Maboko Sports Wear stocks genuine jerseys, boots, balls and training
+          kits for teams, schools and every athlete in Mariakani and beyond.
         </motion.p>
 
         <motion.div
@@ -71,9 +67,9 @@ export function Hero() {
           className="mt-16 grid max-w-2xl grid-cols-3 gap-6 border-t border-white/15 pt-8"
         >
           {[
-            { k: "10+", v: "Years serving athletes" },
-            { k: "5K+", v: "Happy customers" },
-            { k: "100%", v: "Genuine products" },
+            { k: "100%", v: "Authentic brands" },
+            { k: "Teams", v: "Schools & clubs supplied" },
+            { k: "Fast", v: "Custom jersey printing" },
           ].map((s) => (
             <div key={s.v}>
               <div className="text-2xl font-bold text-white sm:text-3xl">{s.k}</div>
