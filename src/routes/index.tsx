@@ -13,23 +13,23 @@ import { ScrollToTop } from "@/components/site/ScrollToTop";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Apex Sports — Genuine Sports Equipment for Athletes, Teams & Schools" },
+      { title: "Maboko Sports Wear — Genuine Sports Gear in Mariakani" },
       {
         name: "description",
         content:
-          "Shop authentic football, basketball, gym and training gear. Fair pricing, bulk orders for clubs and schools, fast service. Contact us today.",
+          "Maboko Sports Wear in Mariakani stocks authentic jerseys, football boots, balls and team kits. Custom team printing available. Call 0793 249 128.",
       },
-      { property: "og:title", content: "Apex Sports — Genuine Sports Equipment" },
+      { property: "og:title", content: "Maboko Sports Wear — Mariakani" },
       {
         property: "og:description",
-        content: "Authentic sports gear for athletes, teams and schools. Contact us for pricing and bulk orders.",
+        content: "Authentic sportswear, footwear and team kits along Kaloleni Road, Mariakani. Call 0793 249 128 / 0762 032 044.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "canonical", href: "/" }],
   }),
+
   component: Index,
 });
 

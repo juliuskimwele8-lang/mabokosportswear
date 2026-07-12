@@ -1,5 +1,5 @@
 import { Award, Target, Users } from "lucide-react";
-import aboutImg from "@/assets/about.jpg";
+import aboutAsset from "@/assets/uploads/IMG-20260708-WA0006.jpg.asset.json";
 import { Reveal } from "./Reveal";
 
 export function About() {
@@ -9,19 +9,19 @@ export function About() {
         <Reveal>
           <div className="relative">
             <img
-              src={aboutImg}
-              alt="Our sports equipment showroom"
+              src={aboutAsset.url}
+              alt="Basketballs in stock at Maboko Sports Wear"
               width={1200}
               height={900}
               loading="lazy"
-              className="rounded-3xl object-cover shadow-[var(--shadow-elevated)]"
+              className="rounded-3xl object-cover shadow-[var(--shadow-elevated)] aspect-[4/3]"
             />
             <div className="absolute -bottom-6 -right-6 hidden rounded-2xl bg-primary p-6 text-primary-foreground shadow-[var(--shadow-glow)] sm:block">
-              {/* TODO: Replace years of experience */}
-              <div className="text-4xl font-bold">10+</div>
-              <div className="text-sm font-medium opacity-90">Years of experience</div>
+              <div className="text-4xl font-bold">100%</div>
+              <div className="text-sm font-medium opacity-90">Authentic gear</div>
             </div>
           </div>
+
         </Reveal>
 
         <Reveal delay={0.1}>
@@ -29,20 +29,20 @@ export function About() {
             About Us
           </span>
           <h2 className="mt-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            Built by athletes, for athletes.
+            Mariakani's trusted sports outfitter.
           </h2>
           <p className="mt-5 text-lg text-muted-foreground">
-            {/* TODO: Replace with real company story */}
-            What started as a small corner shop has grown into the go-to
-            destination for teams, coaches and weekend players across the region.
-            We stock what we'd use ourselves — no gimmicks, no shortcuts.
+            Maboko Sports Wear supplies genuine jerseys, footwear, balls and
+            training kits to teams, schools and individual athletes across the
+            Coast region. Located along Kaloleni Road in Mariakani, we're proud
+            to help clubs of every size look and play their best.
           </p>
 
           <div className="mt-8 grid gap-5 sm:grid-cols-3">
             {[
-              { icon: Target, title: "Our Mission", body: "Make quality gear accessible to every athlete." },
-              { icon: Award, title: "10+ Years", body: "Serving clubs, schools & individuals." },
-              { icon: Users, title: "5,000+", body: "Athletes trust us for their gear." },
+              { icon: Target, title: "Our Mission", body: "Quality sportswear that every athlete can afford." },
+              { icon: Award, title: "Genuine Brands", body: "Adidas, Puma, Mikasa, Gilbert, Molten and more." },
+              { icon: Users, title: "Teams & Schools", body: "Bulk supply and custom team printing available." },
             ].map((f) => (
               <div key={f.title} className="rounded-2xl border border-border bg-muted/40 p-5">
                 <f.icon className="h-6 w-6 text-primary" />
@@ -51,6 +51,7 @@ export function About() {
               </div>
             ))}
           </div>
+
         </Reveal>
       </div>
     </section>
