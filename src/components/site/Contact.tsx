@@ -2,17 +2,17 @@ import { useState, type FormEvent } from "react";
 import { Mail, MapPin, MessageCircle, Phone, Send, CheckCircle2 } from "lucide-react";
 import { Reveal } from "./Reveal";
 
-// TODO: Replace all contact placeholders with real business info
 const CONTACT = {
-  phone: "+1 (555) 123-4567",
-  whatsapp: "+15551234567", // digits only for wa.me link
-  whatsappDisplay: "+1 (555) 123-4567",
-  email: "hello@apexsports.example",
-  address: "123 Athletic Ave, Suite 4, Your City",
+  phone: "+254 793 249 128",
+  phoneAlt: "+254 762 032 044",
+  whatsapp: "254793249128",
+  whatsappDisplay: "+254 793 249 128",
+  email: "info@mabokosportswear.co.ke",
+  address: "Mariakani, along Kaloleni Road, Kilifi County, Kenya",
   mapsEmbed:
-    // Generic placeholder embed — replace with your business's Google Maps embed URL
-    "https://www.google.com/maps?q=Madison+Square+Garden&output=embed",
+    "https://www.google.com/maps?q=-3.8617517,39.4752335&z=17&output=embed",
 };
+
 
 export function Contact() {
   const [sent, setSent] = useState(false);
