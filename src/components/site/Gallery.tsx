@@ -1,15 +1,24 @@
 import { Reveal } from "./Reveal";
+import img1 from "@/assets/uploads/IMG-20260708-WA0001.jpg.asset.json";
+import img2 from "@/assets/uploads/IMG-20260708-WA0002.jpg.asset.json";
+import img3 from "@/assets/uploads/IMG-20260708-WA0036.jpg.asset.json";
+import img4 from "@/assets/uploads/IMG-20260708-WA0006.jpg.asset.json";
+import img5 from "@/assets/uploads/IMG-20260708-WA0050.jpg.asset.json";
+import img6 from "@/assets/uploads/IMG-20260708-WA0054.jpg.asset.json";
+import img7 from "@/assets/uploads/IMG-20260708-WA0013.jpg.asset.json";
+import img8 from "@/assets/uploads/IMG-20260708-WA0072.jpg.asset.json";
+import img9 from "@/assets/uploads/IMG-20260708-WA0028.jpg.asset.json";
 
-// TODO: Replace these with your own product / store photos.
-// Placeholder images from Unsplash (sports).
 const images = [
-  { src: "https://images.unsplash.com/photo-1517649763962-0c623066013b?w=1000&q=80", alt: "Football on field", span: "lg:col-span-2 lg:row-span-2" },
-  { src: "https://images.unsplash.com/photo-1546519638-68e109498ffc?w=800&q=80", alt: "Basketball" },
-  { src: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80", alt: "Running shoes" },
-  { src: "https://images.unsplash.com/photo-1583500178690-f7fd39f6e51e?w=800&q=80", alt: "Gym equipment" },
-  { src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=80", alt: "Athlete training" },
-  { src: "https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&q=80", alt: "Volleyball" },
-  { src: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&q=80", alt: "Rugby ball" },
+  { src: img5.url, alt: "Adidas Predator football boots", span: "lg:col-span-2 lg:row-span-2" },
+  { src: img1.url, alt: "Arsenal home jersey" },
+  { src: img4.url, alt: "Molten basketballs in stock" },
+  { src: img2.url, alt: "Puma football" },
+  { src: img3.url, alt: "Mikasa volleyball" },
+  { src: img7.url, alt: "Gilbert rugby balls" },
+  { src: img6.url, alt: "Adidas track pants collection" },
+  { src: img8.url, alt: "Team kit — jersey and shorts" },
+  { src: img9.url, alt: "Custom printed Kamale VTC team jersey" },
 ];
 
 export function Gallery() {
@@ -21,7 +30,7 @@ export function Gallery() {
             Gallery
           </span>
           <h2 className="mt-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
-            A look at what we do.
+            A look inside the shop.
           </h2>
         </Reveal>
 
