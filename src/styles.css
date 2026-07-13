@@ -150,7 +150,7 @@
   &:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-elevated);
-    border-color: oklch(0.62 0.19 148 / 0.4);
+    border-color: oklch(0.78 0.15 220 / 0.4);
   }
 }
 
