@@ -70,7 +70,7 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-                <span>info@mabokosportswear.co.ke</span>
+                <a href="mailto:mabokosports6@gmail.com" className="transition-colors hover:text-primary">mabokosports6@gmail.com</a>
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="mt-0.5 h-4 w-4 shrink-0 text-primary" />

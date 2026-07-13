@@ -53,7 +53,11 @@ export function Products() {
                   <h3 className="text-lg font-bold">{p.name}</h3>
                   <p className="mt-1 flex-1 text-sm text-muted-foreground">{p.desc}</p>
                   <a
-                    href="#contact"
+                    href={`mailto:mabokosports6@gmail.com?subject=${encodeURIComponent(
+                      `Order enquiry: ${p.name}`
+                    )}&body=${encodeURIComponent(
+                      `Hi Maboko Sports Wear,\n\nI'd like to order / enquire about: ${p.name}.\n\nQuantity:\nPreferred size / colour:\nMy name:\nMy phone:\n\nThanks.`
+                    )}`}
                     className="mt-4 inline-flex items-center justify-center rounded-lg bg-foreground px-4 py-2.5 text-sm font-semibold text-background transition-colors group-hover:bg-primary"
                   >
                     Contact to Order
