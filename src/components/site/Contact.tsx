@@ -19,10 +19,30 @@ export function Contact() {
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // TODO: Wire to Formspree / EmailJS. Example (Formspree):
-    // await fetch("https://formspree.io/f/YOUR_ID", { method: "POST", body: new FormData(e.currentTarget), headers: { Accept: "application/json" } });
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    const name = String(data.get("name") || "");
+    const email = String(data.get("email") || "");
+    const phone = String(data.get("phone") || "");
+    const subject = String(data.get("subject") || "New order enquiry");
+    const message = String(data.get("message") || "");
+
+    const body = [
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone}`,
+      "",
+      "Message / Order details:",
+      message,
+    ].join("\n");
+
+    const mailto = `mailto:${CONTACT.email}?subject=${encodeURIComponent(
+      subject
+    )}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+
     setSent(true);
-    (e.currentTarget as HTMLFormElement).reset();
+    form.reset();
     setTimeout(() => setSent(false), 4000);
   };
 
