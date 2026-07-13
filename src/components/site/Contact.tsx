@@ -7,7 +7,7 @@ const CONTACT = {
   phoneAlt: "+254 762 032 044",
   whatsapp: "254793249128",
   whatsappDisplay: "+254 793 249 128",
-  email: "info@mabokosportswear.co.ke",
+  email: "mabokosports6@gmail.com",
   address: "Mariakani, along Kaloleni Road, Kilifi County, Kenya",
   mapsEmbed:
     "https://www.google.com/maps?q=-3.8617517,39.4752335&z=17&output=embed",
