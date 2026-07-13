@@ -19,10 +19,10 @@ export const Route = createFileRoute("/")({
         content:
           "Maboko Sports Wear in Mariakani stocks authentic jerseys, football boots, balls and team kits. Custom team printing available. Call 0793 249 128.",
       },
-      { property: "og:title", content: "Maboko Sports Wear — Mariakani" },
+      { property: "og:title", content: "Maboko Sports Wear — Genuine Sports Gear in Mariakani" },
       {
         property: "og:description",
-        content: "Authentic sportswear, footwear and team kits along Kaloleni Road, Mariakani. Call 0793 249 128 / 0762 032 044.",
+        content: "Maboko Sports Wear in Mariakani stocks authentic jerseys, football boots, balls and team kits. Custom team printing available. Call 0793 249 128.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
