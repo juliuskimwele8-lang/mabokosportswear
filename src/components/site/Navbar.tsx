@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import logoAsset from "@/assets/uploads/IMG-20260708-WA0087.jpg.asset.json";
 
 const BUSINESS_NAME = "Maboko Sports Wear";
 
 const links = [
-  { href: "#home", label: "Home" },
-  { href: "#about", label: "About" },
-  { href: "#products", label: "Products" },
-  { href: "#why", label: "Why Us" },
-  { href: "#gallery", label: "Gallery" },
-  { href: "#testimonials", label: "Reviews" },
-  { href: "#contact", label: "Contact" },
+  { href: "/#home", label: "Home" },
+  { href: "/#about", label: "About" },
+  { href: "/products", label: "Shop", isRoute: true },
+  { href: "/#why", label: "Why Us" },
+  { href: "/#gallery", label: "Gallery" },
+  { href: "/#testimonials", label: "Reviews" },
+  { href: "/#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -35,7 +36,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
-        <a href="#home" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5">
           <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-xl bg-white shadow-sm ring-1 ring-border">
             <img src={logoAsset.url} alt="Maboko Sports Wear logo" className="h-full w-full object-contain p-1" />
           </span>
@@ -46,7 +47,7 @@ export function Navbar() {
           >
             {BUSINESS_NAME}
           </span>
-        </a>
+        </Link>
 
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
@@ -65,7 +66,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <a href="#contact" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 text-sm">
+        <a href="/#contact" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 text-sm">
           Get in Touch
         </a>
 
@@ -102,7 +103,7 @@ export function Navbar() {
               ))}
               <li className="mt-2 px-1 pb-2">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setOpen(false)}
                   className="btn-primary w-full"
                 >
