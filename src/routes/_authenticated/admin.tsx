@@ -204,7 +204,7 @@ function AdminPage() {
                           onClick={() => {
                             if (confirm(`Delete "${p.name}"?`)) deleteMutation.mutate(p.id);
                           }}
-                          className="rounded-lg border border-border p-2 hover:border-destructive hover:text-destructive"
+                          className="rounded-lg border border-border p-2 hover:border-destructive hover:text-red-600"
                           aria-label="Delete"
                         >
                           <Trash2 className="h-4 w-4" />
@@ -390,7 +390,7 @@ function ProductForm({
           <input type="checkbox" checked={form.active} onChange={(e) => setForm({ ...form, active: e.target.checked })} />
           Visible to customers
         </label>
-        {error && <p className="sm:col-span-2 rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</p>}
+        {error && <p className="sm:col-span-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>}
         <div className="sm:col-span-2 flex justify-end gap-2">
           <button type="button" onClick={onClose} className="rounded-lg border border-border px-4 py-2 text-sm font-semibold">Cancel</button>
           <button type="submit" disabled={saving || uploading} className="btn-primary disabled:opacity-60">

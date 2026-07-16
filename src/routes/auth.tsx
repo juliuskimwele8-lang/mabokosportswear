@@ -88,7 +88,7 @@ function AuthPage() {
               autoComplete={mode === "signin" ? "current-password" : "new-password"}
             />
           </div>
-          {error && <p className="rounded-lg bg-destructive/10 px-3 py-2 text-sm text-destructive">{error}</p>}
+          {error && <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{error}</p>}
           <button
             type="submit"
             disabled={loading}
