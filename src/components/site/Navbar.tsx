@@ -83,16 +83,15 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-2 md:flex">
-          {signedIn && (
-            <Link
-              to="/admin"
-              className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
-                scrolled ? "text-primary hover:bg-muted" : "text-white hover:bg-white/10"
-              }`}
-            >
-              Dashboard
-            </Link>
-          )}
+          <Link
+            to={signedIn ? "/admin" : "/auth"}
+            className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+              scrolled ? "text-primary hover:bg-muted" : "text-white hover:bg-white/10"
+            }`}
+          >
+            {signedIn ? "Dashboard" : "Sign In"}
+          </Link>
+
           <a href="/#contact" className="btn-primary !py-2.5 !px-4 text-sm">
             Get in Touch
           </a>
@@ -129,17 +128,16 @@ export function Navbar() {
                   </a>
                 </li>
               ))}
-              {signedIn && (
-                <li>
-                  <Link
-                    to="/admin"
-                    onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-3 text-base font-semibold text-primary hover:bg-muted"
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link
+                  to={signedIn ? "/admin" : "/auth"}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg px-3 py-3 text-base font-semibold text-primary hover:bg-muted"
+                >
+                  {signedIn ? "Dashboard" : "Sign In"}
+                </Link>
+              </li>
+
               <li className="mt-2 px-1 pb-2">
                 <a
                   href="/#contact"
