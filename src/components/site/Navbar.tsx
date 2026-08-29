@@ -128,17 +128,16 @@ export function Navbar() {
                   </a>
                 </li>
               ))}
-              {signedIn && (
-                <li>
-                  <Link
-                    to="/admin"
-                    onClick={() => setOpen(false)}
-                    className="block rounded-lg px-3 py-3 text-base font-semibold text-primary hover:bg-muted"
-                  >
-                    Dashboard
-                  </Link>
-                </li>
-              )}
+              <li>
+                <Link
+                  to={signedIn ? "/admin" : "/auth"}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-lg px-3 py-3 text-base font-semibold text-primary hover:bg-muted"
+                >
+                  {signedIn ? "Dashboard" : "Sign In"}
+                </Link>
+              </li>
+
               <li className="mt-2 px-1 pb-2">
                 <a
                   href="/#contact"
