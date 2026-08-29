@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { supabase } from "@/integrations/supabase/client";
 import { motion, AnimatePresence } from "framer-motion";
 import logoAsset from "@/assets/uploads/IMG-20260708-WA0087.jpg.asset.json";
 
@@ -19,6 +20,21 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [signedIn, setSignedIn] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    supabase.auth.getSession().then(({ data }) => {
+      if (active) setSignedIn(!!data.session);
+    });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      setSignedIn(!!session);
+    });
+    return () => {
+      active = false;
+      sub.subscription.unsubscribe();
+    };
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -66,9 +82,21 @@ export function Navbar() {
           ))}
         </ul>
 
-        <a href="/#contact" className="hidden md:inline-flex btn-primary !py-2.5 !px-4 text-sm">
-          Get in Touch
-        </a>
+        <div className="hidden items-center gap-2 md:flex">
+          {signedIn && (
+            <Link
+              to="/admin"
+              className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                scrolled ? "text-primary hover:bg-muted" : "text-white hover:bg-white/10"
+              }`}
+            >
+              Dashboard
+            </Link>
+          )}
+          <a href="/#contact" className="btn-primary !py-2.5 !px-4 text-sm">
+            Get in Touch
+          </a>
+        </div>
 
         <button
           aria-label="Toggle menu"
@@ -101,6 +129,17 @@ export function Navbar() {
                   </a>
                 </li>
               ))}
+              {signedIn && (
+                <li>
+                  <Link
+                    to="/admin"
+                    onClick={() => setOpen(false)}
+                    className="block rounded-lg px-3 py-3 text-base font-semibold text-primary hover:bg-muted"
+                  >
+                    Dashboard
+                  </Link>
+                </li>
+              )}
               <li className="mt-2 px-1 pb-2">
                 <a
                   href="/#contact"
