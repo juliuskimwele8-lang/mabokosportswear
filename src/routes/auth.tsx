@@ -23,8 +23,12 @@ function AuthPage() {
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      if (data.session) navigate({ to: "/admin" });
+      if (data.session) navigate({ to: "/admin", replace: true });
     });
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, session) => {
+      if (session) navigate({ to: "/admin", replace: true });
+    });
+    return () => sub.subscription.unsubscribe();
   }, [navigate]);
 
   const onSubmit = async (e: React.FormEvent) => {
@@ -36,14 +40,19 @@ function AuthPage() {
         const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
       } else {
-        const { error } = await supabase.auth.signUp({
+        const { data, error } = await supabase.auth.signUp({
           email,
           password,
           options: { emailRedirectTo: `${window.location.origin}/admin` },
         });
         if (error) throw error;
+        if (!data.session) {
+          setError("Account created — check your email to confirm, then sign in.");
+          setMode("signin");
+          return;
+        }
       }
-      navigate({ to: "/admin" });
+      navigate({ to: "/admin", replace: true });
     } catch (err) {
       setError(err instanceof Error ? err.message : "Sign in failed");
     } finally {
