@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { productsQueryOptions } from "@/lib/products";
+import { ProductImage } from "./ProductImage";
 
 export function Products() {
   const { data: products = [] } = useQuery(productsQueryOptions());
@@ -30,10 +31,9 @@ export function Products() {
               <article className="card-soft group flex h-full flex-col overflow-hidden">
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
                   {p.image_url && (
-                    <img
-                      src={p.image_url}
+                    <ProductImage
+                      url={p.image_url}
                       alt={p.name}
-                      loading="lazy"
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     />
                   )}

@@ -5,6 +5,7 @@ import { Search, ShoppingBag } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
+import { ProductImage } from "@/components/site/ProductImage";
 import { productsQueryOptions, type Product } from "@/lib/products";
 
 export const Route = createFileRoute("/products")({
@@ -145,10 +146,9 @@ function ProductCard({ product }: { product: Product }) {
     <article className="card-soft group flex h-full flex-col overflow-hidden">
       <div className="relative aspect-square overflow-hidden bg-muted">
         {product.image_url ? (
-          <img
-            src={product.image_url}
+          <ProductImage
+            url={product.image_url}
             alt={product.name}
-            loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
