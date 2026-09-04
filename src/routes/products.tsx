@@ -5,6 +5,7 @@ import { Search, ShoppingBag } from "lucide-react";
 import { Navbar } from "@/components/site/Navbar";
 import { Footer } from "@/components/site/Footer";
 import { ScrollToTop } from "@/components/site/ScrollToTop";
+import { ProductImage } from "@/components/site/ProductImage";
 import { productsQueryOptions, type Product } from "@/lib/products";
 
 export const Route = createFileRoute("/products")({
