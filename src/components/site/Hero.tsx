@@ -1,17 +1,17 @@
 import { motion } from "framer-motion";
 import { ArrowRight, PhoneCall } from "lucide-react";
-import heroAsset from "@/assets/uploads/IMG-20260708-WA0050.jpg.asset.json";
+import heroAsset from "@/assets/uploads/IMG-20260708-WA0065.jpg.asset.json";
 
 export function Hero() {
   return (
     <section id="home" className="relative isolate min-h-screen overflow-hidden">
       <img
         src={heroAsset.url}
-        alt="Adidas Predator football boots at Maboko Sports Wear"
+        alt="Adidas X Crazyfast football boots at Maboko Sports Wear"
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/85 via-black/70 to-black/50" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.62_0.19_148_/_0.35),transparent_60%)]" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/88 via-black/72 to-black/55" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_bottom_left,oklch(0.78_0.15_220_/_0.28),transparent_62%)]" />
 
       <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-4 pt-32 pb-20 sm:px-6 lg:px-8">
         <motion.div
