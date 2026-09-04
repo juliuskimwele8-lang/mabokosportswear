@@ -1,21 +1,25 @@
 import { Reveal } from "./Reveal";
 import img1 from "@/assets/uploads/IMG-20260708-WA0001.jpg.asset.json";
-import img2 from "@/assets/uploads/IMG-20260708-WA0002.jpg.asset.json";
 import img3 from "@/assets/uploads/IMG-20260708-WA0036.jpg.asset.json";
-import img4 from "@/assets/uploads/IMG-20260708-WA0006.jpg.asset.json";
-import img5 from "@/assets/uploads/IMG-20260708-WA0050.jpg.asset.json";
 import img6 from "@/assets/uploads/IMG-20260708-WA0054.jpg.asset.json";
-import img7 from "@/assets/uploads/IMG-20260708-WA0013.jpg.asset.json";
 import img8 from "@/assets/uploads/IMG-20260708-WA0072.jpg.asset.json";
 import img9 from "@/assets/uploads/IMG-20260708-WA0028.jpg.asset.json";
+import nikeBoots from "@/assets/uploads/IMG-20260708-WA0062.jpg.asset.json";
+import adidasBoots from "@/assets/uploads/IMG-20260708-WA0065.jpg.asset.json";
+import tracksuit from "@/assets/uploads/IMG-20260708-WA0066.jpg.asset.json";
+import netballBlue from "@/assets/uploads/IMG-20260708-WA0007.jpg.asset.json";
+import netballPink from "@/assets/uploads/IMG-20260708-WA0008.jpg.asset.json";
+import netballYellow from "@/assets/uploads/IMG-20260708-WA0009.jpg.asset.json";
 
 const images = [
-  { src: img5.url, alt: "Adidas Predator football boots", span: "lg:col-span-2 lg:row-span-2" },
+  { src: nikeBoots.url, alt: "Nike Mercurial Air Zoom football boots", span: "lg:col-span-2 lg:row-span-2" },
+  { src: adidasBoots.url, alt: "Adidas X Crazyfast football boots" },
+  { src: tracksuit.url, alt: "Nike tracksuit — yellow jacket and black pants" },
+  { src: netballPink.url, alt: "Gilbert Pulse netball in pink" },
+  { src: netballBlue.url, alt: "Gilbert netball in light blue" },
+  { src: netballYellow.url, alt: "Gilbert netball in yellow and red" },
   { src: img1.url, alt: "Arsenal home jersey" },
-  { src: img4.url, alt: "Molten basketballs in stock" },
-  { src: img2.url, alt: "Puma football" },
   { src: img3.url, alt: "Mikasa volleyball" },
-  { src: img7.url, alt: "Gilbert rugby balls" },
   { src: img6.url, alt: "Adidas track pants collection" },
   { src: img8.url, alt: "Team kit — jersey and shorts" },
   { src: img9.url, alt: "Custom printed Kamale VTC team jersey" },
