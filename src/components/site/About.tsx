@@ -1,5 +1,5 @@
 import { Award, Target, Users } from "lucide-react";
-import aboutAsset from "@/assets/uploads/IMG-20260708-WA0006.jpg.asset.json";
+import aboutAsset from "@/assets/uploads/IMG-20260708-WA0019.jpg.asset.json";
 import { Reveal } from "./Reveal";
 
 export function About() {
@@ -10,7 +10,7 @@ export function About() {
           <div className="relative">
             <img
               src={aboutAsset.url}
-              alt="Basketballs in stock at Maboko Sports Wear"
+              alt="Mikasa handballs in stock at Maboko Sports Wear"
               width={1200}
               height={900}
               loading="lazy"
