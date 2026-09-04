@@ -1,5 +1,5 @@
 import { Award, Target, Users } from "lucide-react";
-import aboutAsset from "@/assets/uploads/IMG-20260708-WA0006.jpg.asset.json";
+import aboutAsset from "@/assets/uploads/IMG-20260708-WA0019.jpg.asset.json";
 import { Reveal } from "./Reveal";
 
 export function About() {
