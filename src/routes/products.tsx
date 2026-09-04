@@ -145,10 +145,9 @@ function ProductCard({ product }: { product: Product }) {
     <article className="card-soft group flex h-full flex-col overflow-hidden">
       <div className="relative aspect-square overflow-hidden bg-muted">
         {product.image_url ? (
-          <img
-            src={product.image_url}
+          <ProductImage
+            url={product.image_url}
             alt={product.name}
-            loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : (
