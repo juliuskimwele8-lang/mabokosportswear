@@ -167,7 +167,9 @@ function AdminPage() {
                     <td className="px-4 py-3">
                       <div className="flex items-center gap-3">
                         <div className="h-12 w-12 shrink-0 overflow-hidden rounded-lg bg-muted">
-                          {p.image_url && <img src={p.image_url} alt="" className="h-full w-full object-cover" />}
+                          {p.image_url && (
+                            <ProductImage url={p.image_url} alt="" className="h-full w-full object-cover" />
+                          )}
                         </div>
                         <div>
                           <div className="font-semibold">{p.name}</div>
