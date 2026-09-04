@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { LogOut, Plus, Pencil, Trash2, Star, Upload, ArrowLeft } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { productsQueryOptions, PRODUCT_CATEGORIES, type Product } from "@/lib/products";
+import { ProductImage } from "@/components/site/ProductImage";
 import logoAsset from "@/assets/uploads/IMG-20260708-WA0087.jpg.asset.json";
 
 export const Route = createFileRoute("/_authenticated/admin")({
