@@ -10,7 +10,7 @@ export function About() {
           <div className="relative">
             <img
               src={aboutAsset.url}
-              alt="Basketballs in stock at Maboko Sports Wear"
+              alt="Mikasa handballs in stock at Maboko Sports Wear"
               width={1200}
               height={900}
               loading="lazy"
