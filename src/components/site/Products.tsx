@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "./Reveal";
 import { productsQueryOptions } from "@/lib/products";
+import { ProductImage } from "./ProductImage";
 
 export function Products() {
   const { data: products = [] } = useQuery(productsQueryOptions());
