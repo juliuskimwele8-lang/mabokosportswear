@@ -357,7 +357,7 @@ function ProductForm({
           <div className="flex flex-col gap-3 sm:flex-row sm:items-start">
             <div className="grid h-28 w-28 shrink-0 place-items-center overflow-hidden rounded-lg border border-dashed border-border bg-muted">
               {form.image_url ? (
-                <img src={form.image_url} alt="" className="h-full w-full object-cover" />
+                <ProductImage url={form.image_url} alt="" className="h-full w-full object-cover" />
               ) : (
                 <span className="text-xs text-muted-foreground">Preview</span>
               )}
