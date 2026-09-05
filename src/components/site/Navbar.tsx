@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import { supabase } from "@/integrations/supabase/client";
 import { motion, AnimatePresence } from "framer-motion";
@@ -21,6 +21,22 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const [signedIn, setSignedIn] = useState(false);
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("maboko-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const useDark = savedTheme ? savedTheme === "dark" : prefersDark;
+    document.documentElement.classList.toggle("dark", useDark);
+    setDark(useDark);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextDark = !dark;
+    document.documentElement.classList.toggle("dark", nextDark);
+    window.localStorage.setItem("maboko-theme", nextDark ? "dark" : "light");
+    setDark(nextDark);
+  };
 
   useEffect(() => {
     let active = true;
@@ -83,6 +99,17 @@ export function Navbar() {
         </ul>
 
         <div className="hidden items-center gap-2 md:flex">
+          <button
+            type="button"
+            onClick={toggleTheme}
+            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
+            title={dark ? "Light mode" : "Dark mode"}
+            className={`grid h-10 w-10 place-items-center rounded-lg transition-colors ${
+              scrolled ? "text-foreground hover:bg-muted" : "text-white hover:bg-white/10"
+            }`}
+          >
+            {dark ? <Sun className="h-4.5 w-4.5" /> : <Moon className="h-4.5 w-4.5" />}
+          </button>
           <Link
             to={signedIn ? "/admin" : "/auth"}
             className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
@@ -136,6 +163,17 @@ export function Navbar() {
                 >
                   {signedIn ? "Dashboard" : "Sign In"}
                 </Link>
+              </li>
+
+              <li className="mt-1 px-1">
+                <button
+                  type="button"
+                  onClick={toggleTheme}
+                  className="flex w-full items-center gap-3 rounded-lg px-3 py-3 text-base font-medium text-foreground hover:bg-muted"
+                >
+                  {dark ? <Sun className="h-5 w-5 text-primary" /> : <Moon className="h-5 w-5 text-primary" />}
+                  {dark ? "Light mode" : "Dark mode"}
+                </button>
               </li>
 
               <li className="mt-2 px-1 pb-2">
