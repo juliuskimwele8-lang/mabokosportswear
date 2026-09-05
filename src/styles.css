@@ -65,6 +65,82 @@
   --border: oklch(0.9 0.015 250);
   --ring: oklch(0.78 0.15 220);
   --ink: oklch(0.13 0.05 265);
+  --cursor-ring: oklch(0.98 0.005 250 / 0.7);
+}
+
+.motion-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 70;
+  height: 3px;
+  pointer-events: none;
+}
+
+.motion-progress__bar {
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left center;
+  background: var(--gradient-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.motion-cursor,
+.motion-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 80;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+}
+
+.motion-cursor {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid var(--cursor-ring);
+  border-radius: 999px;
+}
+
+.motion-cursor-dot {
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: var(--shadow-glow);
+}
+
+.scroll-cue {
+  position: relative;
+  display: block;
+  width: 1px;
+  height: 3.5rem;
+  overflow: hidden;
+  background: oklch(1 0 0 / 0.25);
+}
+
+.scroll-cue span {
+  position: absolute;
+  inset: 0;
+  background: var(--color-primary);
+  animation: scroll-cue 1.8s ease-in-out infinite;
+}
+
+@keyframes scroll-cue {
+  0% { transform: translateY(-100%); }
+  50%, 100% { transform: translateY(100%); }
+}
+
+@media (pointer: fine) {
+  body, a, button, input, textarea, select { cursor: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-progress,
+  .motion-cursor,
+  .motion-cursor-dot,
+  .scroll-cue { display: none; }
 }
 
 
