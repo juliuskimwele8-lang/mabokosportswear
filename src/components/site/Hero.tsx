@@ -8,6 +8,7 @@ export function Hero() {
       <img
         src={heroAsset.url}
         alt="Adidas X Crazyfast football boots at Maboko Sports Wear"
+        data-parallax
         className="absolute inset-0 -z-10 h-full w-full object-cover"
       />
       <div className="absolute inset-0 -z-10 bg-gradient-to-br from-black/88 via-black/72 to-black/55" />
@@ -50,11 +51,11 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.3 }}
           className="mt-10 flex flex-wrap gap-4"
         >
-          <a href="#contact" className="btn-primary">
+          <a href="#contact" className="btn-primary" data-magnetic>
             <PhoneCall className="h-4 w-4" />
             Contact Us
           </a>
-          <a href="#products" className="btn-outline">
+          <a href="#products" className="btn-outline" data-magnetic>
             View Products
             <ArrowRight className="h-4 w-4" />
           </a>
@@ -77,6 +78,18 @@ export function Hero() {
             </div>
           ))}
         </motion.div>
+
+        <motion.a
+          href="#about"
+          aria-label="Scroll to discover more"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.8 }}
+          className="absolute bottom-8 right-4 hidden items-center gap-3 text-xs font-semibold uppercase text-white/70 sm:flex lg:right-8"
+        >
+          <span>Discover</span>
+          <span className="scroll-cue" aria-hidden="true"><span /></span>
+        </motion.a>
       </div>
     </section>
   );
