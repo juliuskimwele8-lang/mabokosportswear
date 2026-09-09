@@ -163,7 +163,12 @@
 }
 
 @media (pointer: fine) {
-  body, a, button, input, textarea, select { cursor: none; }
+  .has-motion-cursor body,
+  .has-motion-cursor a,
+  .has-motion-cursor button,
+  .has-motion-cursor input,
+  .has-motion-cursor textarea,
+  .has-motion-cursor select { cursor: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
