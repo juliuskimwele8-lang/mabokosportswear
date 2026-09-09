@@ -72,6 +72,10 @@ export function MotionExperience() {
         const removeListeners: Array<() => void> = [];
 
         if (finePointer && cursor && dot) {
+          document.documentElement.classList.add("has-motion-cursor");
+          removeListeners.push(() =>
+            document.documentElement.classList.remove("has-motion-cursor"),
+          );
           const cursorX = gsap.quickTo(cursor, "x", { duration: 0.42, ease: "power3" });
           const cursorY = gsap.quickTo(cursor, "y", { duration: 0.42, ease: "power3" });
           const dotX = gsap.quickTo(dot, "x", { duration: 0.08, ease: "none" });
